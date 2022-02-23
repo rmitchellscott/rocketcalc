@@ -24,14 +24,10 @@ window.onload = function () {
     theme = localStorage.theme;
 
     if (theme == "dark") {
-      root.style.setProperty('--main-bg-color', '#181a1b');
-      root.style.setProperty('--main-txt-color', '#a69e92');
-      root.style.setProperty('--main-hilight-color', '#dcd9d4');
+      setDarkTheme();
     }
     else if (theme == "light") {
-      root.style.setProperty('--main-bg-color', '#ffffff');
-      root.style.setProperty('--main-txt-color', '#696969');
-      root.style.setProperty('--main-hilight-color', '#131313');
+      setLightTheme();
     }
   }
 
@@ -96,7 +92,16 @@ window.onload = function () {
     }
   
   }
-
+  function setDarkTheme () {
+    root.style.setProperty('--main-bg-color', '#181a1b');
+    root.style.setProperty('--main-txt-color', '#a69e92');
+    root.style.setProperty('--main-hilight-color', '#dcd9d4');
+}
+function setLightTheme () {
+    root.style.setProperty('--main-bg-color', '#ffffff');
+    root.style.setProperty('--main-txt-color', '#696969');
+    root.style.setProperty('--main-hilight-color', '#131313');
+}
   function calcAltitude () {
     let g = 32;
     if (units == "m") {
