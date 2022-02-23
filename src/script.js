@@ -1,36 +1,41 @@
 window.onload = function () {
   
-  var started = false
-  var seconds = 00; 
-  var tens = 00; 
-  var appendTens = document.getElementById("tens")
-  var appendSeconds = document.getElementById("seconds")
-  var buttonStart = document.getElementById('button-start');
-  //var buttonStop = document.getElementById('button-stop');
-  var buttonReset = document.getElementById('button-reset');
-  var appendAlt = document.getElementById("alt");
-  var Interval ;
+  let started = false
+  let seconds = 00; 
+  let tens = 00; 
+  let appendTens = document.getElementById("tens")
+  let appendSeconds = document.getElementById("seconds")
+  let buttonStart = document.getElementById('button-start');
+  let buttonSave = document.getElementById('button-save');
+  let buttonReset = document.getElementById('button-reset');
+  let appendAlt = document.getElementById("alt");
+  let displayUnits = document.getElementById("displayUnits");
+  let Interval ;
+  let units = "ft";
+  let theme = "auto";
+  let root = document.documentElement;
 
-  // buttonStart.onclick = function() {
-    
-  // }
-  // if ('ontouchstart' in window) {
-  //   buttonStart.addEventListener("touchstart", function() {
-  //     var touchHandl = function() {
-  //       buttonPress();
-  //       this.removeEventListener(touchHandl)
-  //     }
-  //     this.addEventListener(touchHandl)
-  //   });
-  // }
+  if (localStorage.units) {
+    units = localStorage.units;
+    displayUnits.innerHTML = units;
+  } 
+
+  if (localStorage.theme) {
+    theme = localStorage.theme;
+
+    if (theme == "dark") {
+      root.style.setProperty('--main-bg-color', '#181a1b');
+      root.style.setProperty('--main-txt-color', '#a69e92');
+      root.style.setProperty('--main-hilight-color', '#dcd9d4');
+    }
+    else if (theme == "light") {
+      root.style.setProperty('--main-bg-color', '#ffffff');
+      root.style.setProperty('--main-txt-color', '#696969');
+      root.style.setProperty('--main-hilight-color', '#131313');
+    }
+  }
 
   buttonStart.addEventListener("click", buttonPress, false);
-  
-  //   buttonStop.onclick = function() {
-  //      clearInterval(Interval);
-  //      calcAltitude();
-  // }
-  
 
   buttonReset.onclick = function() {
     reset();
@@ -93,10 +98,12 @@ window.onload = function () {
   }
 
   function calcAltitude () {
+    let g = 32;
+    if (units == "m") {
+      g = 9.81;
+    }
     let timeString = seconds + '.' + tens;
-    var alt = Math.round(0.5 * 32 * Math.pow(parseFloat(timeString)/2, 2));
-    appendAlt.innerHTML = alt;
+    let alt = Math.round(0.5 * g * Math.pow(parseFloat(timeString)/2, 2));
+    appendAlt.innerHTML = alt.toLocaleString();
   }
-  
-
 }

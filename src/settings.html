@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Stomp Rocket Altitude</title>
+    <title> Preferences</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <script src="script.js"></script>
 </head>
+<script src="settings.js"></script>
 <link rel="manifest" href="manifest.webmanifest" />
 <div class="wrapper">
-<div class=""main">
-<h1>Stomp Rocket <br>Altitude Calculator</h1>
-<p><span id="seconds">00</span>:<span id="tens">00</span></p>
-<p><span id="alt">0</span> <span id=displayUnits>ft</span> </p>
-<button id="button-start" style="line-height: 400%;">Start</button>
-<!-- <button id="button-stop">Stop</button> -->
-<br>
-<button id="button-reset">Reset</button>
-<br><br><br>
-<a href="settings.html">Settings</a><br><br>
-<a href="about.html">How does it work?</a>
-</div>
-<!-- <div class="settings">
 <h1>Settings</h1>
 <div class="form">
     <div class="Grid-cell">
     <h4>Units</h4>
     </div>
     <div class="Grid-cell">
-    <label class="form-control">
+    <!-- <label class="form-control">
         <input type="radio" id="ft" name="units" />
         US
     </label>
     <label class="form-control">
         <input type="radio" id="m" name="units" />
         Metric
-    </label>
+    </label> -->
+    <select classs="form-control" id="units" name="units">
+        <option id="ft" value="ft">US</option>
+        <option id="m" value="m">Metric</option>
+    </select>
     </div> 
 </div>
 <br>
@@ -43,7 +34,7 @@
     <h4>Appearence</h4>
     </div>
     <div class="Grid-cell">
-    <label class="form-control">
+    <!-- <label class="form-control">
         <input type="radio" id="auto" name="theme" />
         Auto
     </label>
@@ -54,13 +45,16 @@
     <label class="form-control">
         <input type="radio" id="light" name="theme" />
         Light
-    </label>
+    </label> -->
+    <select classs="form-control" id="theme" name="theme">
+        <option id="auto" value="auto">Auto</option>
+        <option id="dark" value="Dark">Dark</option>
+        <option id="light" value="Light">Light</option>
+    </select>
     </div>
 </div> 
 <br>
 <button id="button-save">Save</button>
 <br>
-<button id="button-cancel" onclick="window.location.href='index.html';">Cancel</button> 
-</div> -->
+<button id="button-cancel" onclick="window.location.href='index.html';">Cancel</button>
 </div>
-</html>

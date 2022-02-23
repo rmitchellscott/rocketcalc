@@ -4,10 +4,9 @@
     <title> How it Works</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <script src="about.js"></script>
 </head>
-<script src="script.js"></script>
 <link rel="manifest" href="manifest.webmanifest" />
-<script async src="https://unpkg.com/pwacompat" crossorigin="anonymous"></script>
 <div class="wrapper">
 <h1>How it Works</h1>
 <h3>Instructions</h3>
@@ -28,7 +27,7 @@ padding:15px;
 margin-left: auto;
 margin-right: auto;
 max-width:50em">
-Because a stomp rocket&#39;s energy is added instantaneously when the rocket is launched, its trajectory is purely ballistic. It goes straight up until it stops for just a moment, then falls back down. It takes an equal time going up and coming down, so we can divide the total time of flight in half to determine when the rocket was at its highest point. From there, we know how fast gravity pulls on an object (32 feet per second faster, every second) and can calculate backwards to find how high up the rocket was when it started falling back to Earth. <br><br>The equation is: height = &frac12;<var>g</var><var>t</var><sup>2</sup><br><br>The <var>g</var> is for the acceleration of gravity, the <var>t</var> is for time (in our case, we'll divide total flight time by 2 to get <var>t</var>). <br> This calculator assumes launches are perfectly vertical and does not take air resistance in account.
+Because a stomp rocket&#39;s energy is added instantaneously when the rocket is launched, its trajectory is purely ballistic. It goes straight up until it stops for just a moment, then falls back down. It takes an equal time going up and coming down, so we can divide the total time of flight in half to determine when the rocket was at its highest point. From there, we know how fast gravity pulls on an object (<span id="g"></span> per second faster, every second) and can calculate backwards to find how high up the rocket was when it started falling back to Earth. <br><br>The equation is: height = &frac12;<var>g</var><var>t</var><sup>2</sup><br><br>The <var>g</var> is for the acceleration of gravity, the <var>t</var> is for time (in our case, we'll divide total flight time by 2 to get <var>t</var>). <br> This calculator assumes launches are perfectly vertical and does not take air resistance in account.
 </p>
 <br>
 <a href="index.html">Back to the calculator!</a><br><br><br>
