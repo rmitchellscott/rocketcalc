@@ -8,7 +8,8 @@ window.onload = function () {
   if (localStorage.units) {
     units = localStorage.units;
   } 
-  document.getElementById(units).defaultSelected = true;
+  //document.getElementById(units).defaultSelected = true;
+  document.getElementById(units).selected = true;
 
   if (localStorage.theme) {
     theme = localStorage.theme;
@@ -24,7 +25,8 @@ window.onload = function () {
       root.style.setProperty('--main-hilight-color', '#131313');
     }
   }
-  document.getElementById(theme).defaultSelected = true;
+  //document.getElementById(theme).defaultSelected = true;
+  document.getElementById(theme).selected = true;
 
   buttonSave.onclick = function() {
     // localStorage.theme = document.querySelector('input[name="theme"]:checked').id;
