@@ -1,7 +1,24 @@
 /* Variabes */
+
+/* Media stuff */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-bg-color: #181a1b;
+		--main-txt-color: #a69e92;
+		--main-hilight-color: #dcd9d4;
+	}
+}
+@media (prefers-color-scheme: light) {
+	:root {
+		--main-bg-color: #ffffff;
+		--main-txt-color: #696969;
+		--main-hilight-color: #131313;
+	}
+}
+
 /* Mixin's */
  body {
-	 background: #022361;
+	 background: var(--main-bg-color);
 	 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	 height: 100%;
 }
@@ -14,26 +31,35 @@
      	 margin: 10px;
 } */
 .wrapper {
-    color: #fff;
+    color: #a69e92;
     text-align: center;
 }
- h1, h2, h3 {
+ h1, h2 {
 	 font-family: 'Roboto', sans-serif;
 	 font-weight: 100;
 	 font-size: 2.6em;
 	 /*text-transform: uppercase; */
 }
+
+h3 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 2em;
+
+}
+
  #seconds, #tens,  #alt{
 	 font-size: 3em;
+	 color: var(--main-hilight-color)
 }
  button {
 	 -moz-border-radius: 5px;
 	 -webkit-border-radius: 5px;
 	 border-radius: 5px;
 	 -khtml-border-radius: 5px;
-	 background: #022361;
-	 color: #fff;
-	 border: solid 1px #fff;
+	 background: var(--main-bg-color);
+	 color: var(--main-txt-color);
+	 border: solid 1px var(--main-txt-color);
 	 text-decoration: none;
 	 cursor: pointer;
 	 font-size: 1.2em;
@@ -44,13 +70,5 @@
 	 outline: none;
 }
 a:link, a:visited {
-    color: rgb(255, 255, 255);
+    color: var(--main-txt-color);
 }
- /* button:active{
-	 -webkit-transition: all 0.5s ease-in-out;
-	 -moz-transition: all 0.5s ease-in-out;
-	 transition: all 0.5s ease-in-out;
-	 background: #fff;
-	 border: solid 1px #fff;
-	 color: #022361;
-} */
