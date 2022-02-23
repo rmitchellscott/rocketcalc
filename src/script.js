@@ -55,6 +55,8 @@ window.onload = function () {
   }
 
   function reset () {
+    started = false
+    buttonStart.innerText = 'Start'
     clearInterval(Interval);
     tens = "00";
   	seconds = "00";
